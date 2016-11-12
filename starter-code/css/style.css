@@ -11,6 +11,8 @@ h1, h2, p {
 	display: inline-block;
 	height: 50%;
 	width: 50%;
+	text-align: center;
+	padding-left: 25%;
 }
 .card {
 	height: 200px;
