@@ -1,5 +1,5 @@
 // Card declarations and values
-var name = 'game-board'
+var name = 'game-board';
 var cards = ['queen','queen','king','king'];
 var cardsInPlay = [];
 var cardNum = cards.length;
@@ -20,8 +20,8 @@ var resetBoard = function() {
 	for (var i=cardID.length-1; i>= 0; i--) {
 		boardID.removeChild(boardID.childNodes[i]);
 	}
-	createBoard(cards);	
-}
+	createBoard(cards);
+};
 
 
 var createCards = function(elementID,cardArray) {
@@ -31,21 +31,21 @@ var createCards = function(elementID,cardArray) {
     aCard.className = 'card';
     elementID.appendChild(aCard);
   }
-}
+};
 
 
 var createBoard = function(cardArray) {
 // Setup the playing board.
 // displayCardFronts doesn't display the card images until the
-// event handler is complete when using chrome and the 'click'. 
-// This causes the alerts in isMatch to display first. Switching 
-// 'mousedown' works, however it causes problems in FF (which 
-// worked OK with 'click'). EDGE works ok either way. Hoever in 
-// chrome can't reselect a matched pair (good), but can in the 
-// other browsers. Also in chrome 'mousedown' has problems if 
+// event handler is complete when using chrome and the 'click'.
+// This causes the alerts in isMatch to display first. Switching
+// 'mousedown' works, however it causes problems in FF (which
+// worked OK with 'click'). EDGE works ok either way. Hoever in
+// chrome can't reselect a matched pair (good), but can in the
+// other browsers. Also in chrome 'mousedown' has problems if
 // clicking and moving off.
 
-    shuffle(cardArray);  //shuffle the card array
+  shuffle(cardArray);  //shuffle the card array
 	createCards(document.getElementById('game-board'),cardArray);
 
 	var cardID = document.getElementsByClassName('card');
@@ -53,11 +53,11 @@ var createBoard = function(cardArray) {
     	cardID[i].setAttribute('data-card', cardArray[i]);
 		cardID[i].addEventListener('mousedown', displayCardFronts);
 //      doesn't work in chrome (paints after handler)
-//		cardID[i].addEventListener('click', displayCardFronts); 
+//		cardID[i].addEventListener('click', displayCardFronts);
 		cardID[i].addEventListener('click', isTwoCards);
 //		cardID[i].addEventListener('mouseup', isTwoCards);
 	}
-}
+};
 
 
 function isMatch(cardsInPlay) {
@@ -77,7 +77,7 @@ function isMatch(cardsInPlay) {
 
 
 function displayCardFronts() {
-// Display the card images via innerHTML insertion	
+// Display the card images via innerHTML insertion
 	if (this.getAttribute('data-card')==='queen') {
 		this.innerHTML = '<img src="images/spades-884203_640.png" alt="Queen of Spades" />';
 	} else {
@@ -126,4 +126,3 @@ function shuffle(array) { // Ripped from StackOverflow
 createBoard(cards);
 document.getElementById('resetButton').addEventListener('click', resetBoard);
 scoreID = document.getElementsByTagName("H3");
-

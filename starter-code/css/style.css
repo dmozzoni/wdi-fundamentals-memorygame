@@ -21,7 +21,7 @@ h1, h2, p, h3 {
 	height: 200px;
 	width: 150px;
 	background-color: rgba(255, 255, 0, 1);
-    background: linear-gradient(red, yellow);	
+    background: linear-gradient(red, yellow);
 	border: 1px solid rgba(0,0,0,1);
 	border-radius: 10px;
 	float: left;
