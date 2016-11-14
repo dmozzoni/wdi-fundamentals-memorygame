@@ -7,8 +7,9 @@
 <body>
 
 <nav class="clearfix">
-  <a href="#">Instructions</a>
-  <a href="#">Game</a>
+  <a class="menu" href="#instructions">Instructions</a>
+  <a class="menu" href="#game">Game</a>
+  <a id="resetButton" class="menu" href="#">Reset</a>
 </nav>
 <hr>
 
@@ -16,17 +17,16 @@
 	<h1>Memory Game</h1>
 	<h2>A fun game with awesome graphics that challeges your memory.</h2>
 	<hr>
-	<h2>Instructions:</h2>
-	<p>Concentration, also known as Match Match, Memory, Pelmanism, Shinkei-suijaku, Pexeso or simply Pairs, is a card game in which all of the cards are laid face down on a surface and two cards are flipped face up over each turn. The object of the game is to turn over pairs of matching cards.</p>
+	<h2><a id="instructions">Instructions:</a></h2>
+	<p>Concentration, also known as Match Match, Memory, Pelmanism, Shinkei-suijaku, Pexeso or simply Pairs, is a card game in which all of the cards are laid face down on a surface and two cards are flipped face up over each turn. The object of the game is to turn over pairs of matching cards. Press the Reset button in the menubar to reshuffle the playing board.</p>
 	<hr>
+	<h3>Matches Found: 0</h3>
+	<a id="game"></a>
 </header>
-
-
 
 <main>
 	<div id="game-board" class="board"></div>
 </main>
-
 
 <footer>
 	<p>Created with &hearts; by <span class="name">DM</span>.<br>
